@@ -343,7 +343,7 @@ public class ReportedCrimeService {
 
     public List<ReportedCrimeDto> getAll(Integer page) {
         return reportedCrimeRepository
-                .findAll(PageRequest.of(page, 10))
+                .findAll(PageRequest.of(page, 15))
                 .map(mapper::reportedCrimeDto)
                 .toList();
     }

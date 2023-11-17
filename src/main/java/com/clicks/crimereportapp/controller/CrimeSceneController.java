@@ -22,7 +22,7 @@ public class CrimeSceneController {
 
     private final CrimeSceneService crimeSceneService;
 
-    @PostMapping("/")
+    @PostMapping()
     public ResponseEntity<CustomResponse> registerCrime(@RequestBody CrimeSceneDto crimeSceneDto) {
         crimeSceneService.add(crimeSceneDto);
         return ResponseEntity.status(CREATED).body(new CustomResponse("SUCCESS", emptyMap()));

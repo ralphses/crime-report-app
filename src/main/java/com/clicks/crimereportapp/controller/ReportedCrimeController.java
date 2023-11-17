@@ -21,7 +21,7 @@ public class ReportedCrimeController {
 
     private final ReportedCrimeService reportedCrimeService;
 
-    @PostMapping("/report")
+    @PostMapping()
     public boolean report(@RequestBody NewCrimeReport newCrimeReport) {
         return reportedCrimeService.report(newCrimeReport);
     }
@@ -49,7 +49,6 @@ public class ReportedCrimeController {
 
     @PostMapping(value = "/handle", consumes = APPLICATION_FORM_URLENCODED_VALUE)
     public String handleUssdRequest(UssdRequest ussdRequest) {
-        return reportedCrimeService.handle(
-                ussdRequest);
+        return reportedCrimeService.handle(ussdRequest);
     }
 }
