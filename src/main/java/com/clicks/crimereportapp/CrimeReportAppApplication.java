@@ -61,7 +61,7 @@ public class CrimeReportAppApplication {
                     .description("An attack on a student")
                     .build());
 
-            Crime crime4 = crimeRepository.save(Crime.builder()
+            crimeRepository.save(Crime.builder()
                     .name("Assault 4")
                     .code(crimeRepository.count() + 1)
                     .description("An attack on a student 4")

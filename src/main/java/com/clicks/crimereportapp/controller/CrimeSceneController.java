@@ -1,6 +1,7 @@
 package com.clicks.crimereportapp.controller;
 
 import com.clicks.crimereportapp.dto.requests.CrimeSceneDto;
+import com.clicks.crimereportapp.model.CrimeScene;
 import com.clicks.crimereportapp.service.CrimeSceneService;
 import com.clicks.crimereportapp.utils.CustomResponse;
 import lombok.RequiredArgsConstructor;
@@ -24,8 +25,8 @@ public class CrimeSceneController {
 
     @PostMapping()
     public ResponseEntity<CustomResponse> registerCrime(@RequestBody CrimeSceneDto crimeSceneDto) {
-        crimeSceneService.add(crimeSceneDto);
-        return ResponseEntity.status(CREATED).body(new CustomResponse("SUCCESS", emptyMap()));
+        CrimeScene scene = crimeSceneService.add(crimeSceneDto);
+        return ResponseEntity.status(CREATED).body(new CustomResponse("SUCCESS", Map.of("code", scene.getCode())));
     }
 
     @GetMapping("/{page}")
