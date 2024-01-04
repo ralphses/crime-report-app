@@ -140,8 +140,8 @@ public class CrimeReportAppApplication {
 
             userRepository.save(
                     AppUser.builder()
-                            .name("Raphael Eze")
-                            .username("+2347035002025")
+                            .name("Victor Akpan")
+                            .username("+2348142470201")
                             .password("password")
                             .build()
             );
